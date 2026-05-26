@@ -92,7 +92,7 @@ a {
 }
 
 .nav {
-  min-height: 78px;
+  min-height: 88px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -103,16 +103,17 @@ a {
   display: flex;
   align-items: center;
   min-width: 0;
-  gap: 12px;
+  gap: 15px;
   color: var(--ink-strong);
   text-decoration: none;
 }
 
 .brand-mark {
-  width: 50px;
-  height: 46px;
+  width: 74px;
+  height: 58px;
   object-fit: contain;
   flex: 0 0 auto;
+  filter: drop-shadow(0 8px 12px rgba(16, 36, 62, 0.12));
 }
 
 .brand span {
@@ -409,10 +410,10 @@ h3 {
 
 .hero-bottom article {
   display: grid;
-  grid-template-columns: 76px 1fr;
-  gap: 16px;
+  grid-template-columns: 108px 1fr;
+  gap: 18px;
   align-items: center;
-  padding: 18px;
+  padding: 20px;
   background: var(--white);
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -420,9 +421,10 @@ h3 {
 }
 
 .hero-bottom img {
-  width: 76px;
-  height: 58px;
+  width: 104px;
+  height: 78px;
   object-fit: contain;
+  filter: drop-shadow(0 8px 12px rgba(16, 36, 62, 0.12));
 }
 
 .hero-bottom span {
@@ -635,10 +637,11 @@ h3 {
 }
 
 .foundation-brand img {
-  width: 126px;
-  height: 112px;
+  width: 172px;
+  height: 152px;
   object-fit: contain;
-  margin-bottom: 22px;
+  margin-bottom: 26px;
+  filter: drop-shadow(0 12px 18px rgba(16, 36, 62, 0.14));
 }
 
 .foundation-brand p:not(.eyebrow) {
@@ -877,10 +880,12 @@ h3 {
 }
 
 .footer-grid img {
-  width: 58px;
-  height: 46px;
+  width: 88px;
+  height: 68px;
   object-fit: contain;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+  filter: brightness(0) invert(1);
+  opacity: 0.95;
 }
 
 .footer-grid strong,
@@ -990,8 +995,8 @@ h3 {
   }
 
   .brand-mark {
-    width: 42px;
-    height: 40px;
+    width: 56px;
+    height: 46px;
   }
 
   .brand strong {
@@ -1037,12 +1042,12 @@ h3 {
   }
 
   .hero-bottom article {
-    grid-template-columns: 62px 1fr;
+    grid-template-columns: 78px 1fr;
   }
 
   .hero-bottom img {
-    width: 62px;
-    height: 52px;
+    width: 76px;
+    height: 62px;
   }
 
   .timeline li {
