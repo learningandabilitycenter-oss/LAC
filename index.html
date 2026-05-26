@@ -6,25 +6,41 @@
     <title>Learning & Ability Counselling Centre | Neuro Bridge Foundation</title>
     <meta
       name="description"
-      content="Learning & Ability Counselling Centre provides professional counselling, therapy, and learning support in Hyderabad and Vijayawada, with Neuro Bridge Foundation serving as its philanthropic outreach arm."
+      content="Learning & Ability Counselling Centre provides professional counselling, developmental support, speech and behaviour therapy, learning support, and family guidance in Hyderabad and Vijayawada. Neuro Bridge Foundation extends access through social impact programs."
     >
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <meta name="theme-color" content="#10243e">
+    <link rel="icon" href="assets/LAC.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "MedicalBusiness",
+        "name": "Learning & Ability Counselling Centre",
+        "alternateName": "LAC",
+        "description": "Professional counselling, developmental support, speech and behaviour therapy, learning support, family guidance, and emotional wellness services.",
+        "founder": {
+          "@type": "Person",
+          "name": "Vineela Anney",
+          "jobTitle": "Founder and Clinical Director"
+        },
+        "email": "vinni.anneypsychologist@gmail.com",
+        "telephone": "+91-9347575114",
+        "areaServed": ["Hyderabad", "Vijayawada"],
+        "url": "https://learningandabilitycenter-oss.github.io/LAC/"
+      }
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header" data-site-header>
       <nav class="nav shell" aria-label="Primary navigation">
-        <a class="brand-lockup" href="#top" aria-label="Learning & Ability Counselling Centre home">
-          <span class="brand-icons" aria-hidden="true">
-            <img src="assets/lac-mark.svg" alt="">
-            <img src="assets/nbf-mark.svg" alt="">
-          </span>
-          <span class="brand-copy">
+        <a class="brand" href="#top" aria-label="Learning & Ability Counselling Centre home">
+          <img src="assets/LAC.svg" alt="" class="brand-mark">
+          <span>
             <strong>Learning & Ability Counselling Centre</strong>
-            <small>with Neuro Bridge Foundation</small>
+            <small>Clinical care with social impact</small>
           </span>
         </a>
 
@@ -37,7 +53,8 @@
 
         <ul class="nav-links" id="primary-nav" data-nav-links>
           <li><a href="#model">Model</a></li>
-          <li><a href="#services">Services</a></li>
+          <li><a href="#services">Clinical Services</a></li>
+          <li><a href="#approach">Approach</a></li>
           <li><a href="#foundation">Foundation</a></li>
           <li><a href="#founder">Founder</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -46,33 +63,31 @@
     </header>
 
     <main id="main">
-      <section class="hero" id="top">
-        <div class="hero-inner shell">
-          <div class="hero-copy">
-            <p class="eyebrow">Clinical enterprise + philanthropic outreach</p>
-            <h1>Professional counselling care with a bridge to community impact.</h1>
-            <p class="lede">
-              Learning & Ability Counselling Centre is the paid clinical practice led by Vineela Anney.
-              Neuro Bridge Foundation is the social impact arm that extends counselling, education support,
-              medical assistance, and awareness programs to families who need help most.
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-grid shell">
+          <div class="hero-content">
+            <p class="eyebrow">Hyderabad and Vijayawada</p>
+            <h1 id="hero-title">Learning & Ability Counselling Centre</h1>
+            <p class="hero-subtitle">
+              Professional counselling, developmental support, speech and behaviour therapy, learning assistance,
+              and family guidance led by Vineela Anney, MHI5712.
             </p>
-
             <div class="hero-actions" aria-label="Primary actions">
               <a class="button button-primary" href="tel:9347575114">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M6.6 10.8c1.5 3 3.6 5.1 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1.3.4 2.6.6 4 .6.7 0 1.2.5 1.2 1.2v3.5c0 .7-.5 1.2-1.2 1.2C10.4 21.9 2.1 13.6 2.1 3.4c0-.7.5-1.2 1.2-1.2h3.5c.7 0 1.2.5 1.2 1.2 0 1.4.2 2.7.6 4 .1.4 0 .9-.3 1.2l-1.7 2.2z" fill="currentColor"/>
                 </svg>
-                Book a consultation
+                Call for consultation
               </a>
-              <a class="button button-secondary" href="#foundation">
+              <a class="button button-secondary" href="mailto:vinni.anneypsychologist@gmail.com">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 21s-7.5-4.5-9.5-9C1.1 8.8 2.8 5.5 6 5.1c1.8-.2 3.5.6 4.5 2.1 1-1.5 2.7-2.3 4.5-2.1 3.2.4 4.9 3.7 3.5 6.9-2 4.5-9.5 9-9.5 9z" fill="currentColor"/>
+                  <path d="M4 5h16c1.1 0 2 .9 2 2v10c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V7c0-1.1.9-2 2-2zm8 7.3L4.7 7.6c-.3-.2-.7 0-.7.4v.4l8 5.2 8-5.2V8c0-.4-.4-.6-.7-.4L12 12.3z" fill="currentColor"/>
                 </svg>
-                Support NBF
+                Send enquiry
               </a>
             </div>
 
-            <dl class="trust-strip" aria-label="Practice highlights">
+            <dl class="credential-panel" aria-label="Practice credentials">
               <div>
                 <dt>Clinical Director</dt>
                 <dd>Vineela Anney</dd>
@@ -82,83 +97,95 @@
                 <dd>MHI5712</dd>
               </div>
               <div>
-                <dt>Service focus</dt>
-                <dd>Hyderabad & Vijayawada</dd>
+                <dt>Care principles</dt>
+                <dd>Individualised, ethical, confidential</dd>
               </div>
             </dl>
           </div>
 
-          <div class="hero-visual" aria-label="Founder and brand system">
-            <img class="founder-image" src="assets/founder-vineela-anney.jpg" alt="Illustrated portrait of Vineela Anney, Founder and Clinical Director">
-            <div class="identity-stack" aria-label="Integrated brand model">
-              <article>
-                <img src="assets/lac-mark.svg" alt="">
-                <div>
-                  <h2>LAC</h2>
-                  <p>Paid clinical counselling, therapy, and learning support.</p>
-                </div>
-              </article>
-              <article>
-                <img src="assets/nbf-mark.svg" alt="">
-                <div>
-                  <h2>NBF</h2>
-                  <p>Free and assisted outreach through donations and membership.</p>
-                </div>
-              </article>
+          <div class="hero-portrait" aria-label="Founder portrait">
+            <div class="portrait-stage">
+              <picture>
+                <source srcset="assets/founder-vineela-anney.webp" type="image/webp">
+                <img src="assets/founder-vineela-anney.png" alt="Vineela Anney, Founder and Clinical Director">
+              </picture>
+            </div>
+            <div class="director-card">
+              <span>Founder & Clinical Director</span>
+              <strong>Vineela Anney</strong>
+              <small>Psychologist | Hypnotherapist | Counsellor | Speech Trainer | Graphology Practitioner</small>
             </div>
           </div>
         </div>
+
+        <div class="hero-bottom shell" aria-label="Integrated institutional structure">
+          <article>
+            <img src="assets/LAC.svg" alt="" aria-hidden="true">
+            <div>
+              <span>Clinical Enterprise</span>
+              <strong>Fee-based professional therapy and counselling services.</strong>
+            </div>
+          </article>
+          <article>
+            <img src="assets/NBF.svg" alt="" aria-hidden="true">
+            <div>
+              <span>Social Impact Arm</span>
+              <strong>Foundation-led access programs for families and communities in need.</strong>
+            </div>
+          </article>
+        </div>
       </section>
 
-      <section class="section model-section" id="model">
+      <section class="section model-section" id="model" aria-labelledby="model-title">
         <div class="shell">
-          <div class="section-head">
-            <p class="eyebrow">Enterprise architecture</p>
-            <h2>One founder-led institution, two clearly governed channels.</h2>
+          <div class="section-intro">
+            <p class="eyebrow">Institutional model</p>
+            <h2 id="model-title">A clear separation of clinical services and charitable access.</h2>
             <p>
-              The brand works like a CSR-aligned healthcare model: LAC remains the professional service
-              provider, while NBF carries the charitable mission for families and communities with limited access.
+              LAC and NBF operate as connected but distinct channels. LAC provides professional clinical services
+              through appointments and structured interventions. NBF extends the same care philosophy into
+              community programs, free camps, education support, and assistance for families facing financial barriers.
             </p>
           </div>
 
-          <div class="architecture-grid">
-            <article class="architecture-card">
-              <span class="card-kicker">Entity A</span>
-              <h3>Learning & Ability Counselling Centre</h3>
+          <div class="model-grid">
+            <article class="model-column">
+              <span class="model-label">LAC</span>
+              <h3>Professional clinical care</h3>
               <p>
-                The commercial clinical flagship for assessment-led counselling, therapy, development support,
-                family guidance, and confidence building.
+                For clients seeking counselling, therapy, developmental support, learning guidance, and family
+                consultation through a confidential, appointment-based setting.
               </p>
-              <ul>
-                <li>Individualised care</li>
-                <li>Ethical practice</li>
-                <li>Confidential support</li>
+              <ul class="check-list">
+                <li>Assessment-led support planning</li>
+                <li>Individual and family sessions</li>
+                <li>Ethical and confidential practice</li>
               </ul>
             </article>
 
-            <article class="architecture-card bridge-card">
-              <span class="card-kicker">Shared values</span>
+            <article class="model-column model-column-bridge">
+              <span class="model-label">Shared philosophy</span>
               <h3>Therapy + Motivation = Transformation</h3>
               <p>
-                Paid services and social work share the same care philosophy: every mind matters, every life has
-                potential, and families are part of the healing journey.
+                The work is grounded in patient education, parental involvement, consistency at home, and progress
+                measured through meaningful functional changes.
               </p>
-              <ul>
-                <li>Assessment before intervention</li>
-                <li>Parents involved with patience</li>
-                <li>Progress tracked through practical outcomes</li>
+              <ul class="check-list">
+                <li>Communication and emotional balance</li>
+                <li>Behaviour improvement and confidence</li>
+                <li>Learning ability and family understanding</li>
               </ul>
             </article>
 
-            <article class="architecture-card foundation-card">
-              <span class="card-kicker">Entity B</span>
-              <h3>Neuro Bridge Foundation</h3>
+            <article class="model-column model-column-foundation">
+              <span class="model-label">NBF</span>
+              <h3>Foundation outreach</h3>
               <p>
-                The philanthropic arm supporting underprivileged children, students, women, adults, elderly
-                individuals, and rural families.
+                For underprivileged children, students, women, adults, elderly individuals, and rural families who
+                require access, awareness, and practical support.
               </p>
-              <ul>
-                <li>Free camps and counselling</li>
+              <ul class="check-list">
+                <li>Free counselling and therapy camps</li>
                 <li>Education and basic needs support</li>
                 <li>Medical and surgical assistance</li>
               </ul>
@@ -167,224 +194,251 @@
         </div>
       </section>
 
-      <section class="section services-section" id="services">
+      <section class="section services-section" id="services" aria-labelledby="services-title">
         <div class="shell">
-          <div class="section-head split-head">
-            <div>
-              <p class="eyebrow">LAC clinical services</p>
-              <h2>Comprehensive care for learning, behaviour, communication, and emotional wellness.</h2>
-            </div>
+          <div class="section-intro section-intro-wide">
+            <p class="eyebrow">Clinical services</p>
+            <h2 id="services-title">Specialised support across counselling, learning, development, and family wellbeing.</h2>
             <p>
-              The centre focuses on communication, emotional balance, behaviour improvement, confidence,
-              social interaction, learning ability, mental strength, family understanding, and positive life changes.
+              The centre supports children, adolescents, adults, parents, and families through structured care that
+              respects the person, the family context, and the practical goals of daily life.
             </p>
           </div>
 
-          <div class="service-grid" aria-label="Learning and Ability Counselling Centre services">
-            <article class="service-card">
-              <h3>Counselling & emotional wellness</h3>
-              <ul>
-                <li>Psychological counselling</li>
-                <li>PTSD and stress management</li>
-                <li>Anxiety, OCD, ODD, and ADHD management</li>
-                <li>Career guidance and emotional wellness support</li>
-              </ul>
+          <div class="service-matrix">
+            <article class="service-block">
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 21a8.5 8.5 0 0 1-8.5-8.5C3.5 7.8 7.3 4 12 4s8.5 3.8 8.5 8.5S16.7 21 12 21zm-3-8.5 2 2 4.5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <h3>Mental health and counselling</h3>
+              <p>Psychological counselling, emotional wellness, anxiety, OCD, ODD, ADHD, PTSD, stress management, and addiction counselling.</p>
             </article>
-            <article class="service-card">
-              <h3>Developmental & learning support</h3>
-              <ul>
-                <li>Learning support for school and college students</li>
-                <li>Autism Spectrum Disorder assessment and support</li>
-                <li>Specific Learning Disability support</li>
-                <li>Intellectual Disability support</li>
-              </ul>
-            </article>
-            <article class="service-card">
-              <h3>Therapy & communication</h3>
-              <ul>
-                <li>Hypnotherapy</li>
-                <li>Speech and language therapy</li>
-                <li>Behaviour therapy and counselling</li>
-                <li>Addiction counselling for alcohol, gambling, and substance use</li>
-              </ul>
-            </article>
-            <article class="service-card">
-              <h3>Family & personal growth</h3>
-              <ul>
-                <li>Parenting guidance and family counselling</li>
-                <li>Personality development and confidence building</li>
-                <li>Graphology and writing analysis</li>
-                <li>Support for children, adolescents, adults, and families</li>
-              </ul>
-            </article>
-          </div>
 
-          <div class="process-panel" aria-label="Care process">
-            <div>
-              <p class="eyebrow">Clinical process</p>
-              <h3>Structured, patient, and family-informed.</h3>
-            </div>
-            <ol class="process-list">
-              <li><strong>Understand</strong><span>Initial concerns, history, family context, and goals.</span></li>
-              <li><strong>Plan</strong><span>Individualised intervention path for the child, adult, or family.</span></li>
-              <li><strong>Practice</strong><span>Sessions supported by home techniques and parent involvement.</span></li>
-              <li><strong>Review</strong><span>Progress tracked through behaviour, communication, confidence, and learning changes.</span></li>
-            </ol>
+            <article class="service-block">
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M5 19V7.5A2.5 2.5 0 0 1 7.5 5H19v14H7.5A2.5 2.5 0 0 1 5 16.5M8 9h8M8 13h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <h3>Learning and academic support</h3>
+              <p>Learning support for school and college students, SLD support, career guidance, confidence building, and structured study guidance.</p>
+            </article>
+
+            <article class="service-block">
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M6 12a6 6 0 0 1 12 0v4a3 3 0 0 1-3 3h-2M9 9h.01M15 9h.01M9 14c1.8 1.5 4.2 1.5 6 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <h3>Developmental and behavioural care</h3>
+              <p>ASD assessment and support, intellectual disability support, behaviour therapy, child development support, and parent guidance.</p>
+            </article>
+
+            <article class="service-block">
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 11h4l4-5v12l-4-5H4v-2zm13-2c1.2 1.7 1.2 4.3 0 6m3-9c2.8 3.8 2.8 8.2 0 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <h3>Speech, language, and communication</h3>
+              <p>Speech and language therapy, communication skill development, social interaction support, and practical home strategies.</p>
+            </article>
+
+            <article class="service-block">
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 20c1.5-3 4-4.5 8-4.5s6.5 1.5 8 4.5M8.5 9a3.5 3.5 0 1 0 7 0 3.5 3.5 0 0 0-7 0z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <h3>Family and parenting guidance</h3>
+              <p>Family counselling, parenting support, relationship understanding, patience-building, and coordinated family involvement.</p>
+            </article>
+
+            <article class="service-block">
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 20h16M6 16l8.8-8.8a2.5 2.5 0 0 1 3.5 3.5L9.5 19H6v-3zM13 9l2 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <h3>Personal development and graphology</h3>
+              <p>Personality development, confidence building, graphology and writing analysis, emotional resilience, and career direction.</p>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="section foundation-section" id="foundation">
-        <div class="shell foundation-layout">
-          <div class="foundation-copy">
+      <section class="section approach-section" id="approach" aria-labelledby="approach-title">
+        <div class="shell approach-grid">
+          <div class="section-intro">
+            <p class="eyebrow">Clinical approach</p>
+            <h2 id="approach-title">Structured care that keeps the family involved.</h2>
+            <p>
+              Progress is approached as a clinical and family process. Sessions are supported by observation,
+              practical techniques, parent participation, home consistency, and review of functional outcomes.
+            </p>
+          </div>
+
+          <ol class="timeline" aria-label="Care pathway">
+            <li>
+              <span>01</span>
+              <div>
+                <h3>Clinical understanding</h3>
+                <p>Concerns, history, strengths, learning context, family needs, and intervention priorities are documented before planning begins.</p>
+              </div>
+            </li>
+            <li>
+              <span>02</span>
+              <div>
+                <h3>Individualised planning</h3>
+                <p>Care is aligned to communication, emotional regulation, behaviour, confidence, learning ability, and family goals.</p>
+              </div>
+            </li>
+            <li>
+              <span>03</span>
+              <div>
+                <h3>Therapeutic intervention</h3>
+                <p>Sessions may include counselling, therapy, speech guidance, behaviour support, hypnotherapy, or family counselling as appropriate.</p>
+              </div>
+            </li>
+            <li>
+              <span>04</span>
+              <div>
+                <h3>Review and reinforcement</h3>
+                <p>Progress is reviewed through practical changes, parent feedback, and consistency of strategies outside the centre.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section foundation-section" id="foundation" aria-labelledby="foundation-title">
+        <div class="shell foundation-grid">
+          <div class="foundation-brand">
+            <img src="assets/NBF.svg" alt="Neuro Bridge Foundation logo">
             <p class="eyebrow">Neuro Bridge Foundation</p>
-            <h2>Connecting minds. Changing lives.</h2>
+            <h2 id="foundation-title">Connecting minds. Changing lives.</h2>
             <p>
-              NBF supports children, students, women, families, adults, and elderly individuals facing emotional,
-              psychological, developmental, neurological, educational, behavioural, and social challenges.
+              Neuro Bridge Foundation exists to improve access for families who need counselling, education support,
+              developmental guidance, medical assistance, and mental health awareness but cannot easily afford or reach
+              professional care.
             </p>
-            <p>
-              The foundation conducts free counselling and therapy camps, rural education support, mental health
-              awareness programs, community development activities, and assistance for medical or surgical needs.
-            </p>
-            <div class="foundation-actions">
-              <a class="button button-primary" href="tel:9676564462">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 3 2 9l10 6 10-6-10-6zm-7 9v4c0 2.8 4 5 7 5s7-2.2 7-5v-4l-7 4-7-4z" fill="currentColor"/>
-                </svg>
-                Donate or join
-              </a>
-              <a class="button button-secondary" href="mailto:vinni.anneypsychologist@gmail.com">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M4 5h16c1.1 0 2 .9 2 2v10c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V7c0-1.1.9-2 2-2zm8 7.3L4.7 7.6c-.3-.2-.7 0-.7.4v.4l8 5.2 8-5.2V8c0-.4-.4-.6-.7-.4L12 12.3z" fill="currentColor"/>
-                </svg>
-                Email foundation
-              </a>
-            </div>
           </div>
 
-          <aside class="donation-panel" aria-label="Foundation contribution options">
-            <img src="assets/nbf-mark.svg" alt="">
-            <h3>Be the bridge. Change a life.</h3>
-            <dl>
-              <div>
-                <dt>Monthly membership</dt>
-                <dd>INR 650</dd>
-              </div>
-              <div>
-                <dt>Annual membership</dt>
-                <dd>INR 7,800</dd>
-              </div>
-              <div>
-                <dt>Payment / donation number</dt>
-                <dd><a href="tel:9676564462">9676564462</a></dd>
-              </div>
-            </dl>
-          </aside>
-        </div>
+          <div class="foundation-details">
+            <div class="program-list" aria-label="Foundation programs">
+              <article>
+                <h3>Education support</h3>
+                <p>Stationery, books, learning resources, rural education programs, and support for underprivileged children.</p>
+              </article>
+              <article>
+                <h3>Therapy access</h3>
+                <p>Free counselling services, therapy camps, developmental support, family guidance, and awareness programs.</p>
+              </article>
+              <article>
+                <h3>Medical assistance</h3>
+                <p>Support for financially disadvantaged families facing medical and surgical needs.</p>
+              </article>
+              <article>
+                <h3>Basic needs and donations</h3>
+                <p>Stationery, ration, rice, dal, blankets, clean clothes, and toys for children.</p>
+              </article>
+            </div>
 
-        <div class="shell impact-grid">
-          <article class="impact-card">
-            <h3>Education support</h3>
-            <p>Stationery, books, school supplies, rural education programs, and learning assistance.</p>
-          </article>
-          <article class="impact-card">
-            <h3>Therapy access</h3>
-            <p>Free counselling, therapy camps, developmental support, and emotional wellness programs.</p>
-          </article>
-          <article class="impact-card">
-            <h3>Medical assistance</h3>
-            <p>Support for financially disadvantaged families facing medical and surgical needs.</p>
-          </article>
-          <article class="impact-card">
-            <h3>Physical donations</h3>
-            <p>Books, pens, ration, rice, dal, blankets, clean clothes, and toys for children.</p>
-          </article>
+            <aside class="membership-panel" aria-label="Foundation contribution details">
+              <h3>Be the Bridge. Change a Life.</h3>
+              <dl>
+                <div>
+                  <dt>Monthly membership</dt>
+                  <dd>Rs. 650</dd>
+                </div>
+                <div>
+                  <dt>Annual membership</dt>
+                  <dd>Rs. 7,800</dd>
+                </div>
+                <div>
+                  <dt>Donation / payment number</dt>
+                  <dd><a href="tel:9676564462">9676564462</a></dd>
+                </div>
+              </dl>
+            </aside>
+          </div>
         </div>
       </section>
 
-      <section class="section founder-section" id="founder">
-        <div class="shell founder-layout">
-          <div class="founder-media">
-            <img src="assets/founder-vineela-anney.jpg" alt="Vineela Anney, Founder and Clinical Director">
+      <section class="section founder-section" id="founder" aria-labelledby="founder-title">
+        <div class="shell founder-grid">
+          <div class="founder-panel">
+            <picture>
+              <source srcset="assets/founder-vineela-anney.webp" type="image/webp">
+              <img src="assets/founder-vineela-anney.png" alt="Vineela Anney">
+            </picture>
           </div>
+
           <div class="founder-copy">
             <p class="eyebrow">Founder & Clinical Director</p>
-            <h2>Vineela Anney, MHI5712</h2>
-            <p class="title-line">
+            <h2 id="founder-title">Vineela Anney, MHI5712</h2>
+            <p class="founder-title">
               Psychologist, hypnotherapist, counsellor, speech trainer, and graphology practitioner.
             </p>
             <p>
-              The foundation grew from lived experience. During her daughter's childhood, Vineela Anney faced
-              severe health complications in the family, including liver hepatitis-related complications, septic
-              shock, blood poisoning, medical negligence, gangrene-related loss of some fingers and toes, and the
-              emotional and financial pressure that followed.
+              Vineela Anney's professional direction is shaped by clinical training and a deeply personal journey
+              through childhood medical trauma within her own family. That experience created a lasting commitment
+              to families navigating developmental delays, emotional distress, learning difficulties, autism, ADHD,
+              speech challenges, behavioural concerns, and financial pressure.
             </p>
             <p>
-              That experience shaped a mission: to support families who feel unheard, unsupported, or limited by
-              circumstances. After Covid, she pursued advanced psychology and counselling training and now works
-              with schools, colleges, organizations, software employees, women, children, and families.
+              Her work brings together therapy, counselling, parent involvement, structured guidance, and patient
+              reinforcement. The emphasis is not on quick promises, but on consistent support, practical progress,
+              and dignity for every child, adult, and family served.
             </p>
-            <blockquote>
-              "Therapy is not only for the child. Parents are also part of the healing journey."
-            </blockquote>
+            <div class="quote-panel">
+              <p>Every mind matters. Every life has potential.</p>
+              <span>Care philosophy</span>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="section proof-section" aria-label="Parent outcomes and values">
-        <div class="shell proof-layout">
-          <div class="section-head">
-            <p class="eyebrow">What progress can look like</p>
-            <h2>Small, consistent changes are treated as meaningful clinical wins.</h2>
+      <section class="section outcomes-section" aria-labelledby="outcomes-title">
+        <div class="shell outcomes-grid">
+          <div class="section-intro">
+            <p class="eyebrow">Care outcomes</p>
+            <h2 id="outcomes-title">The centre focuses on visible, functional progress.</h2>
           </div>
-          <div class="outcome-grid">
-            <article>
-              <h3>Children and students</h3>
-              <p>Speech improvements, better behaviour, learning confidence, emotional regulation, and social interaction.</p>
-            </article>
-            <article>
-              <h3>Parents and families</h3>
-              <p>More patience, consistent home practice, trust in the process, and a calmer home environment.</p>
-            </article>
-            <article>
-              <h3>Community outreach</h3>
-              <p>Awareness, dignity, basic needs support, and access to counselling where care is otherwise limited.</p>
-            </article>
+          <div class="outcome-list">
+            <span>Communication</span>
+            <span>Emotional balance</span>
+            <span>Behaviour improvement</span>
+            <span>Confidence</span>
+            <span>Social interaction</span>
+            <span>Learning ability</span>
+            <span>Mental strength</span>
+            <span>Family understanding</span>
           </div>
         </div>
       </section>
 
-      <section class="section contact-section" id="contact">
-        <div class="shell contact-layout">
-          <div>
+      <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+        <div class="shell contact-grid">
+          <div class="contact-copy">
             <p class="eyebrow">Contact</p>
-            <h2>Start with a confidential conversation.</h2>
+            <h2 id="contact-title">Confidential enquiries and foundation support.</h2>
             <p>
-              For paid counselling and therapy services, contact LAC directly. For membership, physical donations,
-              free-camp support, or community assistance, use the NBF donation channel.
+              Contact LAC for clinical appointments and professional consultations. Contact NBF for membership,
+              charitable support, donations, rural programs, and community assistance.
             </p>
           </div>
-          <div class="contact-grid">
-            <article class="contact-card">
-              <h3>LAC consultation</h3>
+
+          <div class="contact-directory">
+            <article>
+              <span>LAC consultation</span>
               <a href="tel:9347575114">9347575114</a>
-              <span>Psychological counselling, therapy, and clinical support</span>
+              <p>Clinical counselling, therapy, developmental support, and family guidance.</p>
             </article>
-            <article class="contact-card">
-              <h3>Email</h3>
+            <article>
+              <span>Email</span>
               <a href="mailto:vinni.anneypsychologist@gmail.com">vinni.anneypsychologist@gmail.com</a>
-              <span>Appointments, programs, and institutional enquiries</span>
+              <p>Appointments, institutional enquiries, programs, and foundation coordination.</p>
             </article>
-            <article class="contact-card">
-              <h3>NBF support</h3>
+            <article>
+              <span>NBF donation / membership</span>
               <a href="tel:9676564462">9676564462</a>
-              <span>Donation, membership, and foundation contribution number</span>
+              <p>Foundation contributions, memberships, physical donations, and outreach support.</p>
             </article>
-            <article class="contact-card">
-              <h3>Locations served</h3>
-              <strong>Hyderabad & Vijayawada</strong>
-              <span>Clinical services and social outreach focus areas</span>
+            <article>
+              <span>Locations served</span>
+              <strong>Hyderabad and Vijayawada</strong>
+              <p>Clinical services and social outreach focus areas.</p>
             </article>
           </div>
         </div>
@@ -392,14 +446,16 @@
     </main>
 
     <footer class="site-footer">
-      <div class="shell footer-inner">
+      <div class="shell footer-grid">
         <div>
+          <img src="assets/LAC.svg" alt="" aria-hidden="true">
           <strong>Learning & Ability Counselling Centre</strong>
-          <span>Empowering minds. Enriching lives.</span>
+          <span>Empowering Minds. Enriching Lives.</span>
         </div>
         <p>
-          Informational website only. For medical emergencies or immediate risk, contact local emergency services.
-          Donations and memberships should be confirmed directly with Neuro Bridge Foundation.
+          This website is informational and does not replace emergency medical care. For immediate danger,
+          medical emergencies, or crisis situations, contact local emergency services. Donation and membership
+          details should be confirmed directly with Neuro Bridge Foundation.
         </p>
       </div>
     </footer>

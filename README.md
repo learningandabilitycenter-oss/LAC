@@ -7,7 +7,9 @@ Static website and brand identity package for Learning & Ability Counselling Cen
 - `index.html` - main website
 - `styles.css` - responsive visual system
 - `script.js` - mobile navigation behavior
-- `assets/` - logo marks and founder image
+- `assets/LAC.svg` and `assets/NBF.svg` - official client-supplied identity marks
+- `assets/founder-vineela-anney.webp` and `assets/founder-vineela-anney.png` - optimized founder portrait assets used by the website
+- `assets/founder-vineela-anney.jpg` - original client-supplied founder portrait source
 - `brand-identity.md` - brand architecture and AI logo generation prompts
 
 ## Local Preview
