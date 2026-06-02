@@ -3,6 +3,7 @@ import type { CollectionConfig } from 'payload'
 export const Media: CollectionConfig = {
   slug: 'media',
   admin: {
+    description: 'Upload reusable images for gallery items, insight posts, and updates.',
     useAsTitle: 'alt',
   },
   access: {

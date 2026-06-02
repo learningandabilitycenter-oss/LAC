@@ -40,7 +40,7 @@ The LAC website runs on **Next.js 16 + Payload CMS 3.85** and requires three bac
    |----------|-------|
    | `PAYLOAD_SECRET` | A long random string (generate one at [generate-secret.vercel.app](https://generate-secret.vercel.app/64)) |
    | `DATABASE_URL` | Your Neon pooled connection string from Step 1 |
-   | `NEXT_PUBLIC_SERVER_URL` | `https://lacc.org.in` (or your Vercel URL initially) |
+   | `NEXT_PUBLIC_SERVER_URL` | `https://www.lacc.org.in` (or your Vercel URL initially) |
 
 5. Click **Deploy**.
 
@@ -61,11 +61,11 @@ The repository's Vercel build command runs `npm run ci`, which applies pending P
    - For www: add a **CNAME record** pointing to `cname.vercel-dns.com`
 3. Configure these DNS records with your domain registrar.
 4. Wait for DNS propagation (usually 5–30 minutes).
-5. Update `NEXT_PUBLIC_SERVER_URL` to `https://lacc.org.in` if you haven't already.
+5. Update `NEXT_PUBLIC_SERVER_URL` to the canonical URL, `https://www.lacc.org.in`, if you haven't already.
 
 ## Step 6: Set Up the CMS
 
-1. Visit `https://lacc.org.in/admin` (or your Vercel URL + /admin).
+1. Visit `https://www.lacc.org.in/admin` (or your Vercel URL + /admin).
 2. Create the first administrator account (use the client's email).
 3. Start adding content:
    - **Announcements** — banner notices for the homepage
@@ -74,6 +74,15 @@ The repository's Vercel build command runs `npm run ci`, which applies pending P
    - **Updates** — news from the centre and foundation
    - **Media** — upload images (stored in Vercel Blob)
 4. **Enquiries** will automatically appear in the CMS as visitors submit the contact form.
+
+### CMS Editor Workflow
+
+- Upload images in **Media** and provide alternative text. These uploads can be reused in posts, updates, and gallery items.
+- In **Gallery Items**, choose **Image** and select a media upload, or choose **Video** and add a YouTube or direct HTTPS video URL.
+- Enable **Featured** on gallery items and posts that should be prioritized in the homepage previews.
+- Publish insight posts after editing. Draft posts remain hidden from the public site.
+- Keep an announcement **Active** to show it in the homepage banner. The newest active announcement is displayed first.
+- Content changes appear on the public site immediately after saving; a Vercel redeploy is not required for routine CMS edits.
 
 ## Step 7: Email Notifications for Enquiries (Optional)
 

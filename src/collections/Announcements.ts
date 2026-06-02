@@ -6,6 +6,7 @@ export const Announcements: CollectionConfig = {
   slug: 'announcements',
   admin: {
     defaultColumns: ['title', 'type', 'publishedAt', 'active'],
+    description: 'Active announcements appear in the homepage banner. The newest active item is displayed first.',
     useAsTitle: 'title',
   },
   access: {

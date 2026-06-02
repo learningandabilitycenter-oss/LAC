@@ -155,6 +155,8 @@ export interface User {
   collection: 'users';
 }
 /**
+ * Upload reusable images for gallery items, insight posts, and updates.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "media".
  */
@@ -193,6 +195,8 @@ export interface Media {
   };
 }
 /**
+ * Create insight articles. Publish a draft before it appears on the website.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "posts".
  */
@@ -222,12 +226,17 @@ export interface Post {
     [k: string]: unknown;
   };
   publishedAt: string;
+  /**
+   * Featured articles are prioritized in the homepage insights preview.
+   */
   featured?: boolean | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
 }
 /**
+ * Active announcements appear in the homepage banner. The newest active item is displayed first.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "announcements".
  */
@@ -244,6 +253,8 @@ export interface Announcement {
   createdAt: string;
 }
 /**
+ * Publish centre and foundation news. The newest updates appear first.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "updates".
  */
@@ -262,6 +273,8 @@ export interface Update {
   createdAt: string;
 }
 /**
+ * Add photos or videos for the public gallery. Featured items are prioritized on the homepage.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "gallery-items".
  */
@@ -270,9 +283,18 @@ export interface GalleryItem {
   title: string;
   description?: string | null;
   mediaType: 'image' | 'video';
+  /**
+   * Upload a new image or select one from the Media library.
+   */
   image?: (number | null) | Media;
+  /**
+   * Use a YouTube URL or a direct HTTPS video URL.
+   */
   videoUrl?: string | null;
   eventDate?: string | null;
+  /**
+   * Featured items are shown first in the homepage gallery preview.
+   */
   featured?: boolean | null;
   updatedAt: string;
   createdAt: string;

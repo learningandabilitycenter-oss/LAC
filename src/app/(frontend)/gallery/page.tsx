@@ -3,6 +3,8 @@ import type { Metadata } from 'next'
 import { GalleryCard } from '@/components/GalleryCard'
 import { getGalleryItems } from '@/lib/site-data'
 
+export const dynamic = 'force-dynamic'
+
 export const metadata: Metadata = {
   description: 'Programs, activities, outreach, and community moments from LAC and Neuro Bridge Foundation.',
   title: 'Gallery',

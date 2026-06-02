@@ -7,6 +7,7 @@ export const Posts: CollectionConfig = {
   slug: 'posts',
   admin: {
     defaultColumns: ['title', 'category', 'publishedAt', '_status'],
+    description: 'Create insight articles. Publish a draft before it appears on the website.',
     useAsTitle: 'title',
   },
   access: {
@@ -62,6 +63,9 @@ export const Posts: CollectionConfig = {
     {
       name: 'featured',
       type: 'checkbox',
+      admin: {
+        description: 'Featured articles are prioritized in the homepage insights preview.',
+      },
       defaultValue: false,
     },
   ],

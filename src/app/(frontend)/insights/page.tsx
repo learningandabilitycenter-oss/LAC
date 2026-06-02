@@ -3,6 +3,8 @@ import type { Metadata } from 'next'
 import { ArticleCard } from '@/components/ArticleCard'
 import { getArticles } from '@/lib/site-data'
 
+export const dynamic = 'force-dynamic'
+
 export const metadata: Metadata = {
   description: 'Practical mental health, learning support, and parent guidance articles from LAC.',
   title: 'Insights',

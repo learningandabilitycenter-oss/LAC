@@ -7,6 +7,7 @@ export const Updates: CollectionConfig = {
   slug: 'updates',
   admin: {
     defaultColumns: ['title', 'type', 'publishedAt'],
+    description: 'Publish centre and foundation news. The newest updates appear first.',
     useAsTitle: 'title',
   },
   access: {

@@ -20,7 +20,10 @@ import { AnnouncementBar } from '@/components/AnnouncementBar'
 import { ArticleCard } from '@/components/ArticleCard'
 import { EnquiryForm } from '@/components/EnquiryForm'
 import { GalleryCard } from '@/components/GalleryCard'
-import { formatDate, getAnnouncements, getArticles, getGalleryItems, getUpdates } from '@/lib/site-data'
+import { UpdateCard } from '@/components/UpdateCard'
+import { getAnnouncements, getFeaturedArticles, getFeaturedGalleryItems, getUpdates } from '@/lib/site-data'
+
+export const dynamic = 'force-dynamic'
 
 const services = [
   {
@@ -74,8 +77,8 @@ const foundationPrograms = [
 export default async function HomePage() {
   const [announcements, articles, gallery, updates] = await Promise.all([
     getAnnouncements(),
-    getArticles(3),
-    getGalleryItems(3),
+    getFeaturedArticles(3),
+    getFeaturedGalleryItems(3),
     getUpdates(2),
   ])
 
@@ -311,14 +314,7 @@ export default async function HomePage() {
             <Link className="text-link" href="/updates">View all updates <ArrowRight /></Link>
           </div>
           <div className="update-list">
-            {updates.map((update) => (
-              <article key={update.slug}>
-                <span>{update.type}</span>
-                <h3>{update.title}</h3>
-                <p>{update.summary}</p>
-                <time dateTime={update.publishedAt}>{formatDate(update.publishedAt)}</time>
-              </article>
-            ))}
+            {updates.map((update) => <UpdateCard compact key={update.slug} update={update} />)}
           </div>
         </div>
       </section>

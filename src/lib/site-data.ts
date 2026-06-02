@@ -11,6 +11,7 @@ export type Article = {
   category: string
   content?: unknown
   excerpt: string
+  featured?: boolean | null
   heroImage?: CmsMedia | number | null
   publishedAt: string
   slug: string
@@ -37,6 +38,7 @@ export type Update = {
 export type GalleryItem = {
   description?: string | null
   eventDate?: string | null
+  featured?: boolean | null
   image?: CmsMedia | number | null
   mediaType: string
   title: string
@@ -126,6 +128,17 @@ async function withPayload<T>(operation: (payload: Awaited<ReturnType<typeof get
   }
 }
 
+function prioritizeDocuments<T extends { id: number | string }>(featured: T[], recent: T[], limit: number) {
+  const seen = new Set<number | string>()
+
+  return [...featured, ...recent].filter((document) => {
+    if (seen.has(document.id)) return false
+
+    seen.add(document.id)
+    return true
+  }).slice(0, limit)
+}
+
 export async function getAnnouncements(): Promise<Announcement[]> {
   return withPayload(async (payload) => {
     const result = await payload.find({
@@ -145,20 +158,20 @@ export async function getAnnouncements(): Promise<Announcement[]> {
 
 export async function getArticles(limit = 6): Promise<Article[]> {
   return withPayload(async (payload) => {
-    const result = await payload.find({
-      collection: 'posts',
-      depth: 1,
-      limit,
-      sort: '-publishedAt',
-      where: {
-        _status: {
-          equals: 'published',
-        },
-      },
-    })
+    const result = await findArticles(payload, limit)
 
     return result.docs.length ? (result.docs as Article[]) : fallbackArticles
   }, fallbackArticles)
+}
+
+export async function getFeaturedArticles(limit = 3): Promise<Article[]> {
+  return withPayload(async (payload) => {
+    const featured = await findArticles(payload, limit, true)
+    const recent = await findArticles(payload, limit)
+    const articles = prioritizeDocuments(featured.docs, recent.docs, limit)
+
+    return articles.length ? (articles as Article[]) : fallbackArticles.slice(0, limit)
+  }, fallbackArticles.slice(0, limit))
 }
 
 export async function getArticle(slug: string) {
@@ -202,15 +215,53 @@ export async function getUpdates(limit = 6): Promise<Update[]> {
 
 export async function getGalleryItems(limit = 12): Promise<GalleryItem[]> {
   return withPayload(async (payload) => {
-    const result = await payload.find({
-      collection: 'gallery-items',
-      depth: 1,
-      limit,
-      sort: '-eventDate',
-    })
+    const result = await findGalleryItems(payload, limit)
 
     return result.docs.length ? (result.docs as GalleryItem[]) : fallbackGallery
   }, fallbackGallery)
+}
+
+export async function getFeaturedGalleryItems(limit = 3): Promise<GalleryItem[]> {
+  return withPayload(async (payload) => {
+    const featured = await findGalleryItems(payload, limit, true)
+    const recent = await findGalleryItems(payload, limit)
+    const galleryItems = prioritizeDocuments(featured.docs, recent.docs, limit)
+
+    return galleryItems.length ? (galleryItems as GalleryItem[]) : fallbackGallery.slice(0, limit)
+  }, fallbackGallery.slice(0, limit))
+}
+
+async function findArticles(
+  payload: Awaited<ReturnType<typeof getPayload>>,
+  limit: number,
+  featured = false,
+) {
+  return payload.find({
+    collection: 'posts',
+    depth: 1,
+    limit,
+    sort: '-publishedAt',
+    where: {
+      _status: {
+        equals: 'published',
+      },
+      ...(featured ? { featured: { equals: true } } : {}),
+    },
+  })
+}
+
+async function findGalleryItems(
+  payload: Awaited<ReturnType<typeof getPayload>>,
+  limit: number,
+  featured = false,
+) {
+  return payload.find({
+    collection: 'gallery-items',
+    depth: 1,
+    limit,
+    sort: '-eventDate',
+    where: featured ? { featured: { equals: true } } : undefined,
+  })
 }
 
 export function getMediaURL(media?: CmsMedia | number | null) {
@@ -231,6 +282,6 @@ export function formatDate(date?: string | null) {
 export function getYouTubeEmbedURL(url?: string | null) {
   if (!url) return null
 
-  const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([^?&/]+)/)
-  return match ? `https://www.youtube.com/embed/${match[1]}` : null
+  const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([^?&/]+)/)
+  return match ? `https://www.youtube-nocookie.com/embed/${match[1]}` : null
 }

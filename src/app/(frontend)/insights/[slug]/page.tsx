@@ -6,6 +6,8 @@ import { notFound } from 'next/navigation'
 import { RichTextContent } from '@/components/RichTextContent'
 import { formatDate, getArticle, getMediaURL } from '@/lib/site-data'
 
+export const dynamic = 'force-dynamic'
+
 type Args = {
   params: Promise<{ slug: string }>
 }

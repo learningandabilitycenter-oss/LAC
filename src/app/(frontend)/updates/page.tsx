@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 
-import { formatDate, getUpdates } from '@/lib/site-data'
+import { UpdateCard } from '@/components/UpdateCard'
+import { getUpdates } from '@/lib/site-data'
+
+export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   description: 'Latest announcements and organizational updates from LAC and Neuro Bridge Foundation.',
@@ -21,14 +24,7 @@ export default async function UpdatesPage() {
       </section>
       <section className="section">
         <div className="shell update-archive">
-          {updates.map((update) => (
-            <article key={update.slug}>
-              <span>{update.type}</span>
-              <h2>{update.title}</h2>
-              <p>{update.summary}</p>
-              <time dateTime={update.publishedAt}>{formatDate(update.publishedAt)}</time>
-            </article>
-          ))}
+          {updates.map((update) => <UpdateCard key={update.slug} update={update} />)}
         </div>
       </section>
     </>
