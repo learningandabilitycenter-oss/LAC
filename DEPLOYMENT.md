@@ -44,6 +44,8 @@ The LAC website runs on **Next.js 16 + Payload CMS 3.85** and requires three bac
 
 5. Click **Deploy**.
 
+The repository's Vercel build command runs `npm run ci`, which applies pending Payload migrations before building the application. The initial migration creates the CMS tables in a new Neon database automatically.
+
 ## Step 4: Add Vercel Blob Storage
 
 1. In your Vercel project dashboard, go to **Storage** → **Create Store** → **Blob**.
@@ -104,6 +106,16 @@ npm run dev             # Opens at http://localhost:3000
 ```
 
 Local development uses SQLite (no Postgres needed). The CMS admin is at `http://localhost:3000/admin`.
+
+## CMS Schema Changes
+
+Payload automatically updates the local development database. For production, generate and commit a Postgres migration whenever collections or fields change:
+
+```bash
+DATABASE_URL=postgresql://... npm run payload migrate:create describe-the-change
+```
+
+Vercel applies pending migrations during `npm run ci` before each production build.
 
 ## Reference
 

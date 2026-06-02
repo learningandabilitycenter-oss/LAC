@@ -38,6 +38,12 @@ Configure these variables in Vercel:
 - `NEXT_PUBLIC_SERVER_URL`
 - `BLOB_READ_WRITE_TOKEN` after connecting Vercel Blob storage
 
+Vercel runs `npm run ci`, which applies pending Payload Postgres migrations before building the application. When the CMS schema changes, generate and commit a migration:
+
+```bash
+DATABASE_URL=postgresql://... npm run payload migrate:create describe-the-change
+```
+
 See [DEPLOYMENT.md](./DEPLOYMENT.md) for the complete production checklist.
 
 ## Transition Note

@@ -18,19 +18,31 @@ import { Users } from './collections/Users'
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 const databaseURL = process.env.DATABASE_URL || 'file:./lac-cms.db'
-const usePostgres = databaseURL.startsWith('postgres://') || databaseURL.startsWith('postgresql://')
+const usePostgres =
+  typeof databaseURL === 'string' &&
+  (databaseURL.startsWith('postgres://') || databaseURL.startsWith('postgresql://'))
 const useBlobStorage = Boolean(process.env.BLOB_READ_WRITE_TOKEN)
 
-if (process.env.VERCEL && !process.env.PAYLOAD_SECRET) {
-  throw new Error('PAYLOAD_SECRET must be configured before deploying to Vercel.')
-}
+if (process.env.VERCEL) {
+  if (!process.env.PAYLOAD_SECRET) {
+    throw new Error('PAYLOAD_SECRET must be configured in Vercel environment variables.')
+  }
 
-if (process.env.VERCEL && !usePostgres) {
-  throw new Error('A Neon Postgres DATABASE_URL must be configured before deploying to Vercel.')
-}
+  if (!process.env.DATABASE_URL) {
+    throw new Error('DATABASE_URL must be configured in Vercel environment variables.')
+  }
 
-if (process.env.VERCEL && !useBlobStorage) {
-  throw new Error('BLOB_READ_WRITE_TOKEN must be configured before deploying to Vercel.')
+  if (!usePostgres) {
+    throw new Error('DATABASE_URL must be a PostgreSQL URL beginning with postgres:// or postgresql://.')
+  }
+
+  if (!useBlobStorage) {
+    throw new Error('BLOB_READ_WRITE_TOKEN must be configured in Vercel environment variables.')
+  }
+
+  if (!process.env.NEXT_PUBLIC_SERVER_URL) {
+    throw new Error('NEXT_PUBLIC_SERVER_URL must be configured in Vercel environment variables.')
+  }
 }
 
 export default buildConfig({
