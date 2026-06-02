@@ -22,6 +22,7 @@ const usePostgres =
   typeof databaseURL === 'string' &&
   (databaseURL.startsWith('postgres://') || databaseURL.startsWith('postgresql://'))
 const useBlobStorage = Boolean(process.env.BLOB_READ_WRITE_TOKEN)
+const serverURL = process.env.NEXT_PUBLIC_SERVER_URL?.replace(/\/+$/, '')
 
 if (process.env.VERCEL) {
   if (!process.env.PAYLOAD_SECRET) {
@@ -79,7 +80,7 @@ export default buildConfig({
     }),
   ],
   secret: process.env.PAYLOAD_SECRET || 'local-development-secret-change-before-deploying',
-  serverURL: process.env.NEXT_PUBLIC_SERVER_URL,
+  serverURL,
   sharp,
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
