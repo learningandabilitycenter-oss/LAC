@@ -5,16 +5,6 @@ import Link from 'next/link'
 export function SiteFooter() {
   return (
     <footer className="site-footer">
-      <div className="footer-cta">
-        <div className="shell footer-cta-inner">
-          <div>
-            <p className="eyebrow">Learning & Ability Counselling Centre</p>
-            <h2>Care begins with a conversation.</h2>
-          </div>
-          <Link className="button button-primary" href="/contact">Book a consultation <ArrowRight /></Link>
-        </div>
-      </div>
-
       <div className="shell footer-main-grid">
         <div className="footer-brand-column">
           <div className="footer-brand">

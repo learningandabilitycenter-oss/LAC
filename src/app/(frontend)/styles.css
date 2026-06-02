@@ -2503,7 +2503,11 @@ h2 {
 /* Content hub, founder story, and footer refresh */
 .home-hero h1 {
   max-width: 860px;
-  font-size: clamp(3.45rem, 5.4vw, 5.35rem);
+  font-size: clamp(2.8rem, 4.2vw, 4.2rem);
+}
+
+.hero-text {
+  font-size: clamp(0.95rem, 2vw, 1rem);
 }
 
 .home-insights-grid {
