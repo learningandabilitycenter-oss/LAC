@@ -20,6 +20,18 @@ const databaseURL = process.env.DATABASE_URL || 'file:./lac-cms.db'
 const usePostgres = databaseURL.startsWith('postgres://') || databaseURL.startsWith('postgresql://')
 const useBlobStorage = Boolean(process.env.BLOB_READ_WRITE_TOKEN)
 
+if (process.env.VERCEL && !process.env.PAYLOAD_SECRET) {
+  throw new Error('PAYLOAD_SECRET must be configured before deploying to Vercel.')
+}
+
+if (process.env.VERCEL && !usePostgres) {
+  throw new Error('A Neon Postgres DATABASE_URL must be configured before deploying to Vercel.')
+}
+
+if (process.env.VERCEL && !useBlobStorage) {
+  throw new Error('BLOB_READ_WRITE_TOKEN must be configured before deploying to Vercel.')
+}
+
 export default buildConfig({
   admin: {
     meta: {
