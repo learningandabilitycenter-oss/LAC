@@ -13,7 +13,7 @@ export function ArticleCard({ article }: { article: Article }) {
         <Image alt="" className="article-image" height={480} src={image} unoptimized width={800} />
       ) : (
         <div className="article-image article-placeholder">
-          <Image alt="" height={96} src="/brand/lac-logo.svg" width={96} />
+          <Image alt="" height={96} src="/brand/lac-logo.png" width={96} />
         </div>
       )}
       <div className="article-content">

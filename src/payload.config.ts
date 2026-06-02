@@ -8,6 +8,7 @@ import { fileURLToPath } from 'url'
 import sharp from 'sharp'
 
 import { Announcements } from './collections/Announcements'
+import { Enquiries } from './collections/Enquiries'
 import { GalleryItems } from './collections/GalleryItems'
 import { Media } from './collections/Media'
 import { Posts } from './collections/Posts'
@@ -42,7 +43,7 @@ export default buildConfig({
     },
     user: Users.slug,
   },
-  collections: [Users, Media, Posts, Announcements, Updates, GalleryItems],
+  collections: [Users, Media, Posts, Announcements, Updates, GalleryItems, Enquiries],
   db: usePostgres
     ? postgresAdapter({
         pool: {

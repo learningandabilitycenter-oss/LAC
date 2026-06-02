@@ -12,6 +12,7 @@ const navItems = [
   { href: '/insights', label: 'Insights' },
   { href: '/gallery', label: 'Gallery' },
   { href: '/updates', label: 'Updates' },
+  { href: '/#contact', label: 'Enquire' },
 ]
 
 export function SiteHeader() {
@@ -27,7 +28,7 @@ export function SiteHeader() {
       </div>
       <nav className="shell navbar" aria-label="Primary navigation">
         <Link className="brand" href="/" onClick={() => setOpen(false)}>
-          <Image alt="" height={72} src="/brand/lac-logo.svg" width={72} />
+          <Image alt="" height={72} src="/brand/lac-logo.png" width={72} />
           <span>
             <strong>Learning & Ability</strong>
             <small>Counselling Centre</small>

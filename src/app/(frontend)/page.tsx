@@ -18,6 +18,7 @@ import Link from 'next/link'
 
 import { AnnouncementBar } from '@/components/AnnouncementBar'
 import { ArticleCard } from '@/components/ArticleCard'
+import { EnquiryForm } from '@/components/EnquiryForm'
 import { GalleryCard } from '@/components/GalleryCard'
 import { formatDate, getAnnouncements, getArticles, getGalleryItems, getUpdates } from '@/lib/site-data'
 
@@ -25,32 +26,32 @@ const services = [
   {
     icon: MessageCircleHeart,
     title: 'Psychological counselling',
-    text: 'Confidential support for emotional wellbeing, anxiety, stress, PTSD, OCD, ODD, ADHD, and life transitions.',
+    text: 'Confidential support for anxiety, stress, PTSD, OCD, ODD, depression, emotional wellbeing, and life transitions.',
   },
   {
     icon: Brain,
-    title: 'Developmental support',
-    text: 'Structured guidance for autism spectrum disorder, intellectual disability, behavioural concerns, and child development.',
+    title: 'Developmental & behavioural support',
+    text: 'Structured guidance for autism spectrum disorder (ASD), intellectual disability (ID), ADHD, behavioural concerns, and child development.',
   },
   {
     icon: Sparkles,
-    title: 'Speech and language therapy',
-    text: 'Support for speech, language, communication, social interaction, and practical confidence in everyday settings.',
+    title: 'Speech & language therapy',
+    text: 'Support for speech delays, language difficulties, communication challenges, social interaction, and practical confidence building.',
   },
   {
     icon: GraduationCap,
-    title: 'Learning support',
-    text: 'Individualised assistance for school and college students, including specific learning disability support and study guidance.',
+    title: 'Learning support & SLD',
+    text: 'Individualised assistance for school and college students, including specific learning disability (SLD) support, study guidance, and assessment.',
   },
   {
     icon: UsersRound,
-    title: 'Parent and family guidance',
-    text: 'Family counselling and practical strategies that help parents participate consistently in the progress journey.',
+    title: 'Parent & family counselling',
+    text: 'Family counselling, parent guidance, practical home strategies, and consistent reinforcement techniques for the progress journey.',
   },
   {
     icon: HeartHandshake,
-    title: 'Personal development',
-    text: 'Confidence building, personality development, career guidance, addiction counselling, and emotional resilience.',
+    title: 'Personal development & wellness',
+    text: 'Confidence building, personality development, career guidance, addiction counselling (alcohol, gambling, substance use), hypnotherapy, and graphology.',
   },
 ]
 
@@ -62,11 +63,12 @@ const approach = [
 ]
 
 const foundationPrograms = [
-  'Free counselling and therapy access',
-  'Rural mental health awareness',
-  'Education and learning support',
+  'Free counselling and therapy camps',
+  'Rural mental health awareness programs',
+  'Education support for underprivileged children',
   'Medical and surgical assistance',
   'Basic-needs support for families',
+  'Community development activities',
 ]
 
 export default async function HomePage() {
@@ -126,7 +128,7 @@ export default async function HomePage() {
           </div>
         </div>
         <div className="shell hero-brandline">
-          <Image alt="Learning and Ability Counselling Centre" height={128} src="/brand/lac-logo.svg" width={128} />
+          <Image alt="Learning and Ability Counselling Centre" height={128} src="/brand/lac-logo.png" width={128} />
           <div>
             <strong>Every mind matters. Every life has potential.</strong>
             <span>Individualised care | Ethical practice | Confidential support</span>
@@ -214,19 +216,20 @@ export default async function HomePage() {
             <p className="eyebrow">Founder & Clinical Director</p>
             <h2>Vineela Anney, MHI5712</h2>
             <p className="founder-role">
-              Psychologist, hypnotherapist, counsellor, speech trainer, and graphology practitioner.
+              Psychologist | Hypnotherapist | Counsellor | Speech Trainer | Graphologist (Writing Analysis)
             </p>
             <p>
-              Vineela Anney’s work is shaped by professional training and lived experience. Her approach brings
-              together counselling, therapy, parent involvement, practical guidance, and consistent reinforcement.
+              Vineela Anney’s work is shaped by professional training and lived experience. A mother’s journey
+              through her daughter’s medical challenges became the catalyst for a mission — to help children,
+              families, and individuals who face emotional, developmental, and learning difficulties.
             </p>
             <p>
-              The emphasis is not on quick promises. It is on understanding each person carefully, supporting
-              families with patience, and working towards meaningful improvements in communication, behaviour,
-              confidence, emotional balance, learning ability, and daily life.
+              Her approach brings together counselling, therapy, parent involvement, practical guidance, and
+              consistent reinforcement. The emphasis is on patience, understanding each person carefully, and
+              working towards meaningful improvements in daily life.
             </p>
             <div className="outcomes">
-              {['Communication', 'Emotional balance', 'Confidence', 'Learning ability'].map((outcome) => (
+              {['Communication', 'Emotional balance', 'Confidence', 'Behaviour improvement'].map((outcome) => (
                 <span key={outcome}>{outcome}</span>
               ))}
             </div>
@@ -237,7 +240,7 @@ export default async function HomePage() {
       <section className="section foundation-section" id="foundation">
         <div className="shell foundation-grid">
           <div className="foundation-logo">
-            <Image alt="Neuro Bridge Foundation" height={240} src="/brand/nbf-logo.svg" width={240} />
+            <Image alt="Neuro Bridge Foundation" height={240} src="/brand/nbf-logo.png" width={240} />
           </div>
           <div>
             <p className="eyebrow">Neuro Bridge Foundation</p>
@@ -326,14 +329,15 @@ export default async function HomePage() {
             <p className="eyebrow">Contact</p>
             <h2>Begin with a confidential conversation.</h2>
             <p>
-              For counselling, therapy, developmental support, learning guidance, or family enquiries, contact the
-              centre directly.
+              For counselling, therapy, developmental support, learning guidance, or family enquiries, reach out
+              using this form or contact the centre directly.
             </p>
+            <div className="contact-cards">
+              <a href="tel:9347575114"><Phone /><span><small>Call for consultation</small><strong>9347575114</strong></span></a>
+              <a href="mailto:vinni.anneypsychologist@gmail.com"><Mail /><span><small>Email</small><strong>vinni.anneypsychologist@gmail.com</strong></span></a>
+            </div>
           </div>
-          <div className="contact-cards">
-            <a href="tel:9347575114"><Phone /><span><small>Call for consultation</small><strong>9347575114</strong></span></a>
-            <a href="mailto:vinni.anneypsychologist@gmail.com"><Mail /><span><small>Email</small><strong>Send an enquiry</strong></span></a>
-          </div>
+          <EnquiryForm />
         </div>
       </section>
     </>

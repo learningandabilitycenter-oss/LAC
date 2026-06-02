@@ -1,5 +1,6 @@
 .DS_Store
 qa/
+LAC_content_files/
 node_modules/
 .next/
 .vercel/

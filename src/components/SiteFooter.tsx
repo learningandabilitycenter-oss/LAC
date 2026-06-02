@@ -7,10 +7,10 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="shell footer-grid">
         <div className="footer-brand">
-          <Image alt="" height={80} src="/brand/lac-logo.svg" width={80} />
+          <Image alt="" height={80} src="/brand/lac-logo.png" width={80} />
           <div>
             <strong>Learning & Ability Counselling Centre</strong>
-            <span>Empowering Minds. Enriching Lives.</span>
+            <span>Every mind matters. Every life has potential.</span>
           </div>
         </div>
         <div>

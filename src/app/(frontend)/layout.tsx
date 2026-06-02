@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     'Professional counselling, developmental support, speech and behaviour therapy, learning assistance, and family guidance in Hyderabad and Vijayawada.',
   icons: {
-    icon: '/brand/lac-logo.svg',
+    icon: '/brand/lac-logo.png',
   },
   title: {
     default: 'Learning & Ability Counselling Centre',
