@@ -23,7 +23,7 @@ export function ArticleCard({ article }: { article: Article }) {
         </div>
         <h3>{article.title}</h3>
         <p>{article.excerpt}</p>
-        <Link href={`/insights/${article.slug}`}>
+        <Link href={`/insights/articles/${article.slug}`}>
           Read article <ArrowUpRight />
         </Link>
       </div>

@@ -1,18 +1,17 @@
 'use client'
 
-import { Menu, Phone, X } from 'lucide-react'
+import { ArrowRight, Menu, X } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 
 const navItems = [
-  { href: '/#services', label: 'Services' },
-  { href: '/#approach', label: 'Approach' },
-  { href: '/#foundation', label: 'Foundation' },
+  { href: '/services', label: 'Services' },
+  { href: '/approach', label: 'Approach' },
+  { href: '/about', label: 'About' },
+  { href: '/foundation', label: 'Foundation' },
   { href: '/insights', label: 'Insights' },
-  { href: '/gallery', label: 'Gallery' },
-  { href: '/updates', label: 'Updates' },
-  { href: '/#contact', label: 'Enquire' },
+  { href: '/contact', label: 'Contact' },
 ]
 
 export function SiteHeader() {
@@ -28,7 +27,7 @@ export function SiteHeader() {
       </div>
       <nav className="shell navbar" aria-label="Primary navigation">
         <Link className="brand" href="/" onClick={() => setOpen(false)}>
-          <Image alt="" height={72} src="/brand/lac-logo.png" width={72} />
+          <Image alt="" height={72} loading="eager" src="/brand/lac-logo.png" width={72} />
           <span>
             <strong>Learning & Ability</strong>
             <small>Counselling Centre</small>
@@ -55,10 +54,10 @@ export function SiteHeader() {
               </li>
             ))}
           </ul>
-          <a className="header-call" href="tel:9347575114">
-            <Phone aria-hidden="true" />
+          <Link className="header-call" href="/contact" onClick={() => setOpen(false)}>
             <span>Book consultation</span>
-          </a>
+            <ArrowRight aria-hidden="true" />
+          </Link>
         </div>
       </nav>
     </header>

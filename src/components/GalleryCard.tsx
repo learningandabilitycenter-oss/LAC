@@ -3,13 +3,13 @@ import Image from 'next/image'
 
 import { formatDate, getMediaURL, getYouTubeEmbedURL, type GalleryItem } from '@/lib/site-data'
 
-export function GalleryCard({ item }: { item: GalleryItem }) {
+export function GalleryCard({ creative = false, item }: { creative?: boolean; item: GalleryItem }) {
   const image = getMediaURL(item.image)
   const embedURL = item.mediaType === 'video' ? getYouTubeEmbedURL(item.videoUrl) : null
   const directVideoURL = item.mediaType === 'video' && !embedURL ? item.videoUrl : null
 
   return (
-    <article className="gallery-card">
+    <article className={creative ? 'gallery-card gallery-card-creative' : 'gallery-card'}>
       {embedURL ? (
         <iframe
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
