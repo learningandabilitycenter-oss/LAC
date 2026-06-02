@@ -1,2 +1,13 @@
 .DS_Store
 qa/
+node_modules/
+.next/
+.vercel/
+.env
+.env*.local
+media/
+*.db
+*.db-shm
+*.db-wal
+*.tsbuildinfo
+next-env.d.ts
