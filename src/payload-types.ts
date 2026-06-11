@@ -73,6 +73,7 @@ export interface Config {
     announcements: Announcement;
     updates: Update;
     'gallery-items': GalleryItem;
+    testimonials: Testimonial;
     enquiries: Enquiry;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
@@ -87,6 +88,7 @@ export interface Config {
     announcements: AnnouncementsSelect<false> | AnnouncementsSelect<true>;
     updates: UpdatesSelect<false> | UpdatesSelect<true>;
     'gallery-items': GalleryItemsSelect<false> | GalleryItemsSelect<true>;
+    testimonials: TestimonialsSelect<false> | TestimonialsSelect<true>;
     enquiries: EnquiriesSelect<false> | EnquiriesSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
@@ -300,6 +302,24 @@ export interface GalleryItem {
   createdAt: string;
 }
 /**
+ * Share what families and clients say about LAC.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "testimonials".
+ */
+export interface Testimonial {
+  id: number;
+  quote: string;
+  authorName: string;
+  authorRole?: string | null;
+  location?: string | null;
+  rating?: number | null;
+  featured?: boolean | null;
+  publishedAt: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * Enquiries submitted through the website contact form.
  *
  * This interface was referenced by `Config`'s JSON-Schema
@@ -370,6 +390,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'gallery-items';
         value: number | GalleryItem;
+      } | null)
+    | ({
+        relationTo: 'testimonials';
+        value: number | Testimonial;
       } | null)
     | ({
         relationTo: 'enquiries';
@@ -542,6 +566,21 @@ export interface GalleryItemsSelect<T extends boolean = true> {
   videoUrl?: T;
   eventDate?: T;
   featured?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "testimonials_select".
+ */
+export interface TestimonialsSelect<T extends boolean = true> {
+  quote?: T;
+  authorName?: T;
+  authorRole?: T;
+  location?: T;
+  rating?: T;
+  featured?: T;
+  publishedAt?: T;
   updatedAt?: T;
   createdAt?: T;
 }

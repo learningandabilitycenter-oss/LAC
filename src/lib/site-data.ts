@@ -45,6 +45,15 @@ export type GalleryItem = {
   videoUrl?: string | null
 }
 
+export type Testimonial = {
+  authorName: string
+  authorRole?: string | null
+  featured?: boolean | null
+  location?: string | null
+  quote: string
+  rating?: number | null
+}
+
 const fallbackArticles: Article[] = [
   {
     category: 'Parent guidance',
@@ -116,6 +125,39 @@ const fallbackGallery: GalleryItem[] = [
     description: 'Free counselling and guidance programs for families in need.',
     mediaType: 'image',
     title: 'Care access initiatives',
+  },
+]
+
+// Placeholder testimonials. The founder can replace these in the CMS
+// under "Testimonials"; once real testimonials are published, these are
+// no longer shown.
+const fallbackTestimonials: Testimonial[] = [
+  {
+    authorName: 'A parent',
+    authorRole: 'Parent of a 9-year-old',
+    featured: true,
+    location: 'Hyderabad',
+    quote:
+      'For the first time, we felt truly heard. The guidance was patient and practical, and we finally saw our child gain confidence at home and at school.',
+    rating: 5,
+  },
+  {
+    authorName: 'A client',
+    authorRole: 'Counselling client',
+    featured: true,
+    location: 'Vijayawada',
+    quote:
+      'The sessions gave me a safe space to understand myself and move forward at my own pace. I am grateful for the care and respect I received.',
+    rating: 5,
+  },
+  {
+    authorName: 'A family',
+    authorRole: 'Parents of a teenager',
+    featured: true,
+    location: 'Hyderabad',
+    quote:
+      'Compassionate, professional, and genuinely invested in our family. The support we received made a real difference in our daily life.',
+    rating: 5,
   },
 ]
 
@@ -229,6 +271,50 @@ export async function getFeaturedGalleryItems(limit = 3): Promise<GalleryItem[]>
 
     return galleryItems.length ? (galleryItems as GalleryItem[]) : fallbackGallery.slice(0, limit)
   }, fallbackGallery.slice(0, limit))
+}
+
+export async function getTestimonials(limit = 12): Promise<Testimonial[]> {
+  return withPayload(async (payload) => {
+    const result = await payload.find({
+      collection: 'testimonials',
+      limit,
+      sort: '-publishedAt',
+    })
+
+    return result.docs.length ? (result.docs as Testimonial[]) : fallbackTestimonials
+  }, fallbackTestimonials)
+}
+
+export async function getFeaturedTestimonials(limit = 3): Promise<Testimonial[]> {
+  return withPayload(async (payload) => {
+    const featured = await payload.find({
+      collection: 'testimonials',
+      limit,
+      sort: '-publishedAt',
+      where: {
+        featured: {
+          equals: true,
+        },
+      },
+    })
+
+    const recent = await payload.find({
+      collection: 'testimonials',
+      limit,
+      sort: '-publishedAt',
+    })
+
+    const docs = [...featured.docs, ...recent.docs] as (Testimonial & { id?: number | string })[]
+    const seen = new Set<number | string>()
+    const unique = docs.filter((doc, index) => {
+      const key = doc.id ?? index
+      if (seen.has(key)) return false
+      seen.add(key)
+      return true
+    })
+
+    return unique.length ? unique.slice(0, limit) : fallbackTestimonials.slice(0, limit)
+  }, fallbackTestimonials.slice(0, limit))
 }
 
 async function findArticles(

@@ -2,8 +2,13 @@ import type { CollectionConfig } from 'payload'
 
 export const Media: CollectionConfig = {
   slug: 'media',
+  labels: {
+    singular: 'Media file',
+    plural: 'Media library',
+  },
   admin: {
-    description: 'Upload reusable images for gallery items, insight posts, and updates.',
+    description: 'Shared image library. Upload pictures here, then attach them to articles, updates, or gallery items.',
+    group: 'Library',
     useAsTitle: 'alt',
   },
   access: {

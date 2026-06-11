@@ -13,20 +13,28 @@ import Link from 'next/link'
 import { AnnouncementBar } from '@/components/AnnouncementBar'
 import { ArticleCard } from '@/components/ArticleCard'
 import { GalleryCard } from '@/components/GalleryCard'
+import { TestimonialCard } from '@/components/TestimonialCard'
 import { UpdateCard } from '@/components/UpdateCard'
 import { carePrinciples, careSteps, serviceAreas } from '@/lib/practice-content'
-import { getAnnouncements, getFeaturedArticles, getFeaturedGalleryItems, getUpdates } from '@/lib/site-data'
+import {
+  getAnnouncements,
+  getFeaturedArticles,
+  getFeaturedGalleryItems,
+  getFeaturedTestimonials,
+  getUpdates,
+} from '@/lib/site-data'
 
 export const dynamic = 'force-dynamic'
 
 const serviceIcons = [MessageCircleHeart, Brain, GraduationCap, HeartHandshake]
 
 export default async function HomePage() {
-  const [announcements, articles, gallery, updates] = await Promise.all([
+  const [announcements, articles, gallery, updates, testimonials] = await Promise.all([
     getAnnouncements(),
     getFeaturedArticles(3),
     getFeaturedGalleryItems(3),
     getUpdates(2),
+    getFeaturedTestimonials(3),
   ])
 
   return (
@@ -58,11 +66,11 @@ export default async function HomePage() {
             <Image
               alt="Vineela Anney, Founder and Clinical Director"
               className="founder-cutout"
-              height={1124}
+              height={1442}
               loading="eager"
               priority
               src="/brand/vineela-anney.webp"
-              width={1250}
+              width={1091}
             />
             <div className="founder-label">
               <span>Founder & Clinical Director</span>
@@ -193,6 +201,22 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      {testimonials.length > 0 && (
+        <section className="section testimonials-section">
+          <div className="shell">
+            <div className="section-heading">
+              <p className="eyebrow">In their words</p>
+              <h2>Families and clients on their experience with LAC.</h2>
+            </div>
+            <div className="testimonials-grid">
+              {testimonials.map((testimonial, index) => (
+                <TestimonialCard key={index} testimonial={testimonial} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="home-contact-cta">
         <div className="shell home-contact-cta-inner">

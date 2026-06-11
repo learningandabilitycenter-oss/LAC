@@ -5,9 +5,15 @@ import { slugField } from '../lib/fields'
 
 export const Updates: CollectionConfig = {
   slug: 'updates',
+  labels: {
+    singular: 'Update',
+    plural: 'Updates',
+  },
   admin: {
     defaultColumns: ['title', 'type', 'publishedAt'],
-    description: 'Publish centre and foundation news. The newest updates appear first.',
+    description:
+      'Centre and foundation news shown on the Insights → Updates page (and the homepage). The newest updates appear first.',
+    group: 'Website content',
     useAsTitle: 'title',
   },
   access: {

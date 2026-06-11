@@ -5,9 +5,15 @@ import { slugField } from '../lib/fields'
 
 export const Posts: CollectionConfig = {
   slug: 'posts',
+  labels: {
+    singular: 'Insight article',
+    plural: 'Insight articles',
+  },
   admin: {
     defaultColumns: ['title', 'category', 'publishedAt', '_status'],
-    description: 'Create insight articles. Publish a draft before it appears on the website.',
+    description:
+      'Articles shown on the Insights → Articles page (and featured on the homepage). Save as a draft to preview, then Publish to make it live.',
+    group: 'Website content',
     useAsTitle: 'title',
   },
   access: {

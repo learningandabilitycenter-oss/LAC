@@ -12,3 +12,4 @@ media/
 *.db-wal
 *.tsbuildinfo
 next-env.d.ts
+.backup_portraits/
