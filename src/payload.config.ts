@@ -12,6 +12,7 @@ import { Enquiries } from './collections/Enquiries'
 import { GalleryItems } from './collections/GalleryItems'
 import { Media } from './collections/Media'
 import { Posts } from './collections/Posts'
+import { Testimonials } from './collections/Testimonials'
 import { Updates } from './collections/Updates'
 import { Users } from './collections/Users'
 
@@ -55,7 +56,16 @@ export default buildConfig({
     },
     user: Users.slug,
   },
-  collections: [Users, Media, Posts, Announcements, Updates, GalleryItems, Enquiries],
+  collections: [
+    Posts,
+    Updates,
+    GalleryItems,
+    Announcements,
+    Testimonials,
+    Media,
+    Enquiries,
+    Users,
+  ],
   db: usePostgres
     ? postgresAdapter({
         pool: {

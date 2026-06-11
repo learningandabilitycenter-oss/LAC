@@ -29,9 +29,15 @@ const validateVideoURL: TextFieldValidation = (value, { siblingData }) => {
 
 export const GalleryItems: CollectionConfig = {
   slug: 'gallery-items',
+  labels: {
+    singular: 'Gallery item',
+    plural: 'Gallery',
+  },
   admin: {
     defaultColumns: ['title', 'mediaType', 'eventDate', 'featured'],
-    description: 'Add photos or videos for the public gallery. Featured items are prioritized on the homepage.',
+    description:
+      'Photos or videos shown on the Insights → Gallery page. Tick "Featured" to also show an item on the homepage.',
+    group: 'Website content',
     useAsTitle: 'title',
   },
   access: {

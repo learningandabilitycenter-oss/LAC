@@ -3,6 +3,9 @@ import { ArrowRight, HeartHandshake, Quote, Sparkles } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { TestimonialCard } from '@/components/TestimonialCard'
+import { getTestimonials } from '@/lib/site-data'
+
 export const metadata: Metadata = {
   description: 'Discover the personal journey that inspired Vineela Anney to establish LAC and Neuro Bridge Foundation.',
   title: 'About',
@@ -47,7 +50,9 @@ const foundationSupport = [
   'Community support services',
 ]
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const testimonials = await getTestimonials(6)
+
   return (
     <>
       <section className="page-hero page-hero-about">
@@ -65,11 +70,11 @@ export default function AboutPage() {
             <Image
               alt="Vineela Anney, Founder and Clinical Director"
               className="founder-cutout"
-              height={1124}
+              height={1442}
               loading="eager"
               priority
               src="/brand/vineela-anney.webp"
-              width={1250}
+              width={1091}
             />
           </div>
           <div>
@@ -147,6 +152,22 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {testimonials.length > 0 && (
+        <section className="section testimonials-section">
+          <div className="shell">
+            <div className="section-heading">
+              <p className="eyebrow">In their words</p>
+              <h2>The families and clients we walk alongside.</h2>
+            </div>
+            <div className="testimonials-grid">
+              {testimonials.map((testimonial, index) => (
+                <TestimonialCard key={index} testimonial={testimonial} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="founder-belief-section">
         <div className="shell">

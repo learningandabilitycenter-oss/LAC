@@ -2,7 +2,13 @@ import type { CollectionConfig } from 'payload'
 
 export const Users: CollectionConfig = {
   slug: 'users',
+  labels: {
+    singular: 'Admin user',
+    plural: 'Admin users',
+  },
   admin: {
+    description: 'People who can log in to manage this website. Add or remove CMS logins here.',
+    group: 'Settings',
     useAsTitle: 'email',
   },
   auth: true,

@@ -4,10 +4,15 @@ import { authenticated } from '../lib/access'
 
 export const Enquiries: CollectionConfig = {
   slug: 'enquiries',
+  labels: {
+    singular: 'Contact enquiry',
+    plural: 'Contact enquiries',
+  },
   admin: {
     defaultColumns: ['name', 'email', 'subject', 'createdAt'],
     useAsTitle: 'name',
-    description: 'Enquiries submitted through the website contact form.',
+    description: 'Messages people send through the website contact form. This is your inbox — read-only entries you can mark as responded or closed.',
+    group: 'Inbox',
   },
   access: {
     create: () => true,

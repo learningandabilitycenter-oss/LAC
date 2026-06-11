@@ -4,9 +4,15 @@ import { authenticated } from '../lib/access'
 
 export const Announcements: CollectionConfig = {
   slug: 'announcements',
+  labels: {
+    singular: 'Homepage banner',
+    plural: 'Homepage banner',
+  },
   admin: {
     defaultColumns: ['title', 'type', 'publishedAt', 'active'],
-    description: 'Active announcements appear in the homepage banner. The newest active item is displayed first.',
+    description:
+      'The notice banner on the homepage. Only items marked "Active" are shown, and the newest active one appears first.',
+    group: 'Website content',
     useAsTitle: 'title',
   },
   access: {
